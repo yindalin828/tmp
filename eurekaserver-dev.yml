@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-peer
+server:
+  port: 8090
+eureka:
+  instance:
+    hostname: dev1
+  client:
+    ##是否注册
+    register-with-eureka: false
+    ##自我检索
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+  server:
+    ##从集群获取不到instance需要等待时间
+    wait-time-in-ms-when-sync-empty: 0
+    ##自我保护
+    enable-self-preservation: true
+    ##多长时间更新一次数据
+    peer-eureka-nodes-update-interval-ms: 10000
