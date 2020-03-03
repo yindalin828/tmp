@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo1
+server:
+  port: 8091
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8090/eureka
+    healthcheck:
+      enabled: true
+  instance:
+    status-page-url-path: info
+    health-check-url-path: health
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
